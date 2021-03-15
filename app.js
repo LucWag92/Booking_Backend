@@ -29,12 +29,16 @@ app.use(
   })
 );
 
+const port = process.env.PORT || 3000;
+// local setup
+// const port = 8000
+
 mongoose
   .connect(
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@clusterwebapp.d2ykm.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(8000);
+    app.listen(port);
   })
   .catch((err) => {
     console.log(err);
