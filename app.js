@@ -30,8 +30,6 @@ app.use(
 );
 
 const port = process.env.PORT || 3000;
-// local setup
-// const port = 8000
 
 mongoose
   .connect(
